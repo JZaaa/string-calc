@@ -52,6 +52,7 @@ use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\PowFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RadToDegFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RandFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RoundFunction;
+use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RoundUpFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SinFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SinHFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SqrtFunction;
@@ -169,6 +170,7 @@ class SymbolRegistry
             RadToDegFunction::class,
             RandFunction::class,
             RoundFunction::class,
+            RoundUpFunction::class,
             SinFunction::class,
             SinHFunction::class,
             SqrtFunction::class,

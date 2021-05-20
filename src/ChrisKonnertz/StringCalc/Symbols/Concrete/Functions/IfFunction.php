@@ -23,13 +23,14 @@ class IfFunction extends AbstractFunction
      */
     public function execute(array $arguments)
     {
-        if (sizeof($arguments) != 3) {
-            throw new NumberOfArgumentsException('Error: Expected tree arguments, got '.sizeof($arguments));
+        $size = sizeof($arguments);
+        if (!($size <= 3 && $size >= 2)) {
+            throw new NumberOfArgumentsException('Error: Expected two or three arguments, got '.$size);
         }
 
         $cond = (bool)(int)$arguments[0];
         $ifTrue = $arguments[1];
-        $ifFalse = $arguments[2];
+        $ifFalse = isset($arguments[2]) ? $arguments[2] : false;
 
         return $cond?$ifTrue:$ifFalse;
     }
