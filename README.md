@@ -12,7 +12,7 @@ StringCalc is a PHP calculator library for mathematical terms (expressions) pass
 Through Composer:
 
 ```
-composer require chriskonnertz/string-calc
+composer require jzaaa/string-calc
 ```
 
 From then on you may run `composer update` to get the latest version of this library.
@@ -32,6 +32,28 @@ $stringCalc = new ChrisKonnertz\StringCalc\StringCalc();
 $term = '1+2';
 
 $result = $stringCalc->calculate($term); // $result will contain 3
+```
+
+To explain motivation for all these changes, here is a piece of extremely simplified, but working, example code.
+In real code, there will be a lot of validation and ordering of terms, with help of tokenize() method.
+
+```php
+$r          = [
+    '$input' => 1000,
+    '$cond1' => true,
+    '$cond2' => false,
+];
+$math       = [
+    '$bonus1'    => 'if($cond1, 30, 0)',
+    '$bonus2'    => 'if($cond1 && !$cond2, 99, 0)',
+    '$deduction' => '$input * 0.15',
+    '$result'    => '$input - $deduction + $bonus1 + $bonus2',
+];
+$stringCalc = new ChrisKonnertz\StringCalc\StringCalc();
+foreach ($math as $variable => $term) {
+    $r[$variable] = $stringCalc->calculate($term, $r);
+}
+print_r($r);
 ```
 
 > There is an interactive PHP demo script included. It is located at `dev/demo.php`.
@@ -88,6 +110,9 @@ Comparison and logical operators and if function:
 !1||0           // 0 - 'Not' operates as unary
 13<15           // 1
 if(1!=2, 3, 4)  // 3 - if function in excel style
+if(0, 1) // false
+roundUp(1.23, 1) // 1.3
+roundUp(1.2) // 1.3
 ```
 
 Variables:
@@ -146,6 +171,7 @@ min
 pow
 radToDeg
 round
+roundUp
 sin
 sinH
 sqrt
