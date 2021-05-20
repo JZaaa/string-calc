@@ -113,6 +113,8 @@ if(1!=2, 3, 4)  // 3 - if function in excel style
 if(0, 1) // false
 roundUp(1.23, 1) // 1.3
 roundUp(1.2) // 1.3
+and(1, 2) // true
+and(1, 0, 1) // false
 ```
 
 Variables:
@@ -147,6 +149,7 @@ Functions:
 abs
 aCos
 aCosH
+and
 aSin
 aSinH
 aTan

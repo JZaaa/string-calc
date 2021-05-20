@@ -51,8 +51,8 @@
             if ($term !== null) {
                 try {
                     $result = $stringCalc->calculate($term);
-
-                    echo '<div class="success">Result: <code><b>' . $result . '</b></code> (Type: ' . gettype($result) . ')</div>';
+                    $type = gettype($result);
+                    echo '<div class="success">Result: <code><b>' . ($type == 'boolean' ? ($result ? 'TRUE' : 'FALSE') : $result) . '</b></code> (Type: ' . $type . ')</div>';
                 } catch (ChrisKonnertz\StringCalc\Exceptions\StringCalcException $exception) {
                     echo '<div class="error">'.$exception->getMessage();
                     if ($exception->getPosition()) {

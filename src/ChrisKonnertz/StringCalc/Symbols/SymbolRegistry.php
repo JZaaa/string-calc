@@ -24,6 +24,7 @@ use ChrisKonnertz\StringCalc\Symbols\Concrete\Constants\TwoSqrtPiConstant;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\AbsFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\ACosFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\ACosHFunction;
+use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\AndFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\ASinFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\ASinHFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\ATanFunction;
@@ -142,6 +143,7 @@ class SymbolRegistry
             AbsFunction::class,
             ACosFunction::class,
             ACosHFunction::class,
+            AndFunction::class,
             ASinFunction::class,
             ASinHFunction::class,
             ATanFunction::class,
