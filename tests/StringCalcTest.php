@@ -214,7 +214,11 @@ class StringCalcTest extends \PHPUnit\Framework\TestCase
             ['((1+2)*(3+4))', 21],
         ];
 
-        $this->doCalculations(array_merge($numbers, $operators, $brackets));
+        $variables = [
+            ['$var1+ -$var2', -1, ['$var1'=>1, '$var2'=>2]],
+            ['$var+1', 11, ['$var'=>10]],
+        ];
+        $this->doCalculations(array_merge($numbers, $operators, $brackets, $variables));
 
         // Constants
         $constants = [
@@ -259,6 +263,8 @@ class StringCalcTest extends \PHPUnit\Framework\TestCase
             ['hypot(2,2)', 2.8284271247462],
             ['if(1,2,3)', 2],
             ['if(0,2,3)', 3],
+            ['if(1,2)', 2],
+            ['if(0,2)', false],
             ['log(2)', 0.69314718055995],
             ['log(2,2)', 1],
             ['logOneP(2)', 1.0986122886681],
@@ -273,6 +279,10 @@ class StringCalcTest extends \PHPUnit\Framework\TestCase
             ['radToDeg(2)', 114.59155902616],
             ['round(1.8)', 2],
             ['round(1.84,1)', 1.8],
+            ['roundUp(1.84)', 2],
+            ['roundUp(1.84, 1)', 1.9],
+            ['roundUp(-1.84, 0)', -2],
+            ['roundUp(-1.84, 1)', -1.9],
             ['sin(2)', 0.90929742682568],
             ['sinH(2)', 3.626860407847],
             ['sqrt(2)', 1.4142135623731],
@@ -321,8 +331,9 @@ class StringCalcTest extends \PHPUnit\Framework\TestCase
         foreach ($calculations as $calculation) {
             $term           = $calculation[0];
             $expectedResult = $calculation[1];
+            $variables      = isset($calculation[2]) && is_array($calculation[2]) ? $calculation[2] : [];
 
-            $calculatedResult = $this->stringCalc->calculate($term);
+            $calculatedResult = $this->stringCalc->calculate($term, $variables);
 
             if (method_exists($this, 'assertEqualsWithDelta')) {
                 $this->assertEqualsWithDelta($calculatedResult, $expectedResult, $delta, 'Term: '.$term);

@@ -52,6 +52,7 @@ use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\PowFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RadToDegFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RandFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RoundFunction;
+use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RoundUpFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SinFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SinHFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SqrtFunction;
@@ -74,6 +75,7 @@ use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\ModuloOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\MultiplicationOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\SubtractionOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Separator;
+use ChrisKonnertz\StringCalc\Symbols\Concrete\Variable;
 
 /**
  * This class has one simple job: It contains an array with the names
@@ -96,6 +98,7 @@ class SymbolRegistry
     {
         $symbols = [
             Number::class,
+            Variable::class,
 
             Separator::class,
 
@@ -167,6 +170,7 @@ class SymbolRegistry
             RadToDegFunction::class,
             RandFunction::class,
             RoundFunction::class,
+            RoundUpFunction::class,
             SinFunction::class,
             SinHFunction::class,
             SqrtFunction::class,
