@@ -12,7 +12,7 @@ StringCalc is a PHP calculator library for mathematical terms (expressions) pass
 Through Composer:
 
 ```
-composer require jzaaa/string-calc
+composer require jzaaa/string-calc:dev-variables-excel
 ```
 
 From then on you may run `composer update` to get the latest version of this library.
