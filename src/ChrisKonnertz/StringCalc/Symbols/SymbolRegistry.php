@@ -57,6 +57,7 @@ use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\RoundUpFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SinFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SinHFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SqrtFunction;
+use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\SumFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\TanFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Functions\TanHFunction;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Number;
@@ -176,6 +177,7 @@ class SymbolRegistry
             SinFunction::class,
             SinHFunction::class,
             SqrtFunction::class,
+            SumFunction::class,
             TanFunction::class,
             TanHFunction::class,
         ];

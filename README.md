@@ -91,6 +91,9 @@ abs(1) + min(1,2) * max(1,2,3)
 min(1+2, abs(-1))
 1 + ((2 - 3) * (5 - 7))
 2 * (-3)
+roundUp(1.23, 1) // 1.3
+roundUp(1.2) // 1.3
+sum(1, 2) // 3
 ```
 
 Here is a list that shows examples with more exotic syntax:
@@ -111,8 +114,6 @@ Comparison and logical operators and if function:
 13<15           // 1
 if(1!=2, 3, 4)  // 3 - if function in excel style
 if(0, 1) // false
-roundUp(1.23, 1) // 1.3
-roundUp(1.2) // 1.3
 and(1, 2) // true
 and(1, 0, 1) // false
 ```
@@ -178,6 +179,7 @@ roundUp
 sin
 sinH
 sqrt
+sum
 tan
 tanH
 ````
