@@ -246,6 +246,8 @@ class StringCalcTest extends \PHPUnit\Framework\TestCase
             ['abs(-2)', 2],
             ['aCos(0.5)', 1.0471975511966],
             ['aCosH(2)', 1.3169578969248],
+            ['and(1, 2)', true],
+            ['and(1, 0, 1)', false],
             ['aSin(0.5)', 0.5235987755983],
             ['aSinH(2)', 1.4436354751788],
             ['aTan(2)', 1.1071487177941],
