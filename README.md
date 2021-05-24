@@ -116,6 +116,8 @@ if(1!=2, 3, 4)  // 3 - if function in excel style
 if(0, 1) // false
 and(1, 2) // true
 and(1, 0, 1) // false
+1=1 // 1,same as 1==1
+1=0 // 0
 ```
 
 Variables:
@@ -140,6 +142,7 @@ Operators:
 >
 >=
 ==
+= // same as '=='
 !=
 ||
 &&

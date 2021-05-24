@@ -202,6 +202,8 @@ class StringCalcTest extends \PHPUnit\Framework\TestCase
             ['5<5', 0],
             ['5<4', 0],
             ['4<5', 1],
+            ['1=2', 0],
+            ['1=1', 1]
         ];
 
         // Brackets

@@ -69,6 +69,7 @@ use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\ComparisonLtEqOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\ComparisonLtOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\ComparisonNotEqOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\DivisionOperator;
+use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\EqualOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\ExponentiationOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\LogicalAndOperator;
 use ChrisKonnertz\StringCalc\Symbols\Concrete\Operators\LogicalNotOperator;
@@ -133,6 +134,7 @@ class SymbolRegistry
             ComparisonLtOperator::class,
             ComparisonNotEqOperator::class,
             DivisionOperator::class,
+            EqualOperator::class,
             ExponentiationOperator::class,
             LogicalAndOperator::class,
             LogicalNotOperator::class,
