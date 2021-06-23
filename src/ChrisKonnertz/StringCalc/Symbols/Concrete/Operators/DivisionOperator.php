@@ -29,6 +29,9 @@ class DivisionOperator extends AbstractOperator
      */
     public function operate($leftNumber, $rightNumber)
     {
+        if ($rightNumber == 0.0) {
+            return INF;
+        }
         return $leftNumber / $rightNumber;
     }
 
